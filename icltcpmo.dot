@@ -1,0 +1,64 @@
+
+    digraph textX {
+    fontname = "Bitstream Vera Sans"
+    fontsize = 8
+    node[
+        shape=record,
+        style=filled,
+        fillcolor=aliceblue
+    ]
+    nodesep = 0.3
+    edge[dir=black,arrowtail=empty]
+
+
+4384940704[ label="{IclTcPmoProgram|}"]
+
+4384935376[ label="{*Statement|}"]
+
+4384941904[ label="{YogurtStatement|name: ID\l}"]
+
+4384940944[ label="{PrintStatement|value: STRING\l}"]
+
+4384942240[ label="{Assignment|var: ID\l}"]
+
+4384946512[ label="{FizzBuzzStatement|fizznum: INT\lbuzznum: INT\lend: INT\l}"]
+
+4384937632[ label="{Expr|}"]
+
+4384937392[ label="{AddOp|operator: AddOperator\l}"]
+
+4384933072[ label="{Term|}"]
+
+4384933936[ label="{MulOp|operator: MulOperator\l}"]
+
+4384936096[ label="{Factor|value: Operand\l}"]
+
+
+
+4384940704 -> 4384935376[arrowtail=diamond, dir=both, headlabel="statements 1..*"]
+4384935376 -> 4384941904 [dir=back]
+4384935376 -> 4384940944 [dir=back]
+4384935376 -> 4384942240 [dir=back]
+4384935376 -> 4384946512 [dir=back]
+4384940944 -> 4384937632[arrowtail=diamond, dir=both, headlabel="expr "]
+4384942240 -> 4384937632[arrowtail=diamond, dir=both, headlabel="value "]
+4384937632 -> 4384933072[arrowtail=diamond, dir=both, headlabel="left "]
+4384937632 -> 4384937392[arrowtail=diamond, dir=both, headlabel="ops 1..*"]
+4384937392 -> 4384933072[arrowtail=diamond, dir=both, headlabel="right "]
+4384933072 -> 4384936096[arrowtail=diamond, dir=both, headlabel="left "]
+4384933072 -> 4384933936[arrowtail=diamond, dir=both, headlabel="ops 1..*"]
+4384933936 -> 4384936096[arrowtail=diamond, dir=both, headlabel="right "]
+match_rules [ shape=plaintext, label=< <table>
+	<tr>
+		<td><b>AddOperator</b></td><td>+|-</td>
+	</tr>
+	<tr>
+		<td><b>MulOperator</b></td><td>*|/</td>
+	</tr>
+	<tr>
+		<td><b>Operand</b></td><td>INT|ID</td>
+	</tr>
+</table> >]
+
+
+}
