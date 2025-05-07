@@ -130,12 +130,6 @@ class Interpreter:
                     result -= right
             return result
 
-        if hasattr(expr, 'value'):
-            return self.eval_expr(expr.value)
-
-        if hasattr(expr, 'left'):
-            return self.eval_expr(expr.left)
-
         return 0
 
 icltspmo = Interpreter()
