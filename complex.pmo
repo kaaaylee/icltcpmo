@@ -1,0 +1,16 @@
+icl "PART 1: Class Performance Report"
+
+ong totalStudents be 40
+ong failed be 5
+ong passed be totalStudents - failed
+
+icl "Students who passed:"
+icl passed
+
+ong participationBonus be 3
+ong finalScore be passed + participationBonus * 2
+
+icl "Adjusted total:"
+icl finalScore
+
+gtg

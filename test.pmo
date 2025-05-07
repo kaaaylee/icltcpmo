@@ -1,0 +1,14 @@
+ong x be 10  
+ong y be x * 2 + 5
+ong z be 7
+
+icl "y ="
+icl y 
+
+icl "Testing nested expressions:"
+icl x + y * z - 3  
+
+yo gurt
+yo kaylee
+icl support 
+gtg

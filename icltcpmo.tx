@@ -1,0 +1,60 @@
+IclTcPmoProgram:
+    statements+=Statement
+    'gtg'
+;
+
+Statement:
+    YogurtStatement | PrintStatement | Assignment | FizzBuzzStatement
+;
+
+YogurtStatement:
+    'yo' name=ID
+;
+
+PrintStatement:
+    'icl' (value=STRING | expr=Expr)
+;
+
+Assignment:
+    'ong' var=ID 'be' value=Expr
+;
+
+FizzBuzzStatement:
+    'yo' fizznum=INT 'gurt' buzznum=INT 'for' end=INT
+;
+
+Expr:
+    left=Term (ops+=AddOp)*
+;
+
+AddOp:
+    operator=AddOperator right=Term
+;
+
+Term:
+    left=Factor (ops+=MulOp)*
+;
+
+MulOp:
+    operator=MulOperator right=Factor
+;
+
+Factor:
+    value=Operand
+;
+
+AddOperator:
+    '+' | '-'
+;
+
+MulOperator:
+    '*' | '/'
+;
+
+Operand:
+    INT | ID 
+;
+
+ID: /[a-zA-Z_][a-zA-Z0-9_]*/;
+STRING: /"[^"]*"/;
+INT: /[0-9]+/;

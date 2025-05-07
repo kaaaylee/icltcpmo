@@ -1,0 +1,12 @@
+ong test1 be 80
+ong test2 be 63
+ong final_exam be 90
+ong total be test1 + test2 + final_exam
+ong average be total / 3
+
+icl "Expected final score: 77.666..."
+icl "Final score:"
+icl average
+
+icl support
+gtg
